@@ -1,0 +1,119 @@
+/*тут ты почти ничего не трогаешь сама, нужно что-то сделать, пиши мне*/
+a {
+    text-decoration: none;
+}
+
+p,
+pre {
+    font-size: 18px;
+    font-family: "Avenir Next W10 Regular", Tahoma, Geneva, sans-serif;
+    
+}
+
+h1 {
+    font-size: 20px;
+    color: rgb(50, 50, 50);
+    font-family: Tahoma;
+}
+
+h2 {
+    font-size: 25px;
+    text-decoration: underline;
+    color: rgb(50, 50, 50);
+    font-family: Tahoma;
+}
+
+h3 {
+    font-size: 18px;
+    color: rgb(50, 50, 50);
+    font-family: Tahoma;
+}
+
+h5 {
+    font-size: 30px;
+    color: rgb(50, 50, 50);
+    font-family: Tahoma;
+}
+h6 {
+    font-size: 20px;
+    color: rgb(50, 50, 50);
+    font-family: Tahoma;
+    text-align: left;
+    text-decoration: underline;
+}
+
+#main {
+    width: 900px;
+    margin-left: 20px;
+    text-align: center;
+}
+
+.menuTab {
+    text-align: center;
+    transition: 0.5s;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 400px;
+    padding-bottom: 20px;
+    background: white;}
+
+#code {
+    margin-left: 20px;
+}
+
+.codeImg {
+    width: 850px;
+}
+
+#mainImg {
+    width: 850px;
+    margin-left: 20px;
+    text-align: center;
+}
+
+
+/*button css*/
+
+.btn-1 {
+    padding: 1em 3em;
+    border: 3px solid #c4a35a;
+    transition: all 300ms ease;
+    box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-family: "Avenir Next W10 Regular", Tahoma, Geneva, sans-serif;
+    font-weight: 500;
+    position: relative;
+    color: #4A4A4A;
+    display: inline-block;
+}
+
+.btn-1:before {
+    position: absolute;
+    content: '';
+    width: 0%;
+    height: 100%;
+    background: #c4a35a;
+    top: 0;
+    left: 50%;
+    z-index: -1;
+    transition: all 0ms ease;
+}
+
+.btn-1:hover {
+    color: white;
+    border: 3px solid #c4a35a;
+    box-shadow: none;
+}
+
+.btn-1:hover:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    
+    background: #c4a35a;
+    top: 0;
+    left: 0%;
+    z-index: -1;
+    transition: all 300ms ease;
+}
