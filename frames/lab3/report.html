@@ -1,0 +1,160 @@
+</html>
+<html>
+    
+    <head>
+        <link rel="stylesheet" href="../../wow-animation/animate.css">
+        <script src="../../wow-animation/animate.min.css"></script>
+        <script src="../../wow-animation/wow.min.js"></script>
+        <script src="../../wow-animation/wow.js"></script>
+        <link rel="stylesheet" type="text/css" href="../style.css" />
+        <meta http-equiv="Content-Type" content="text/html" ; charset="utf-8">
+        
+        <body>
+            <div id="main" class="wow animated bounceInLeft" data-wow-delay="0.1s">
+                <h5>Мета</h5>
+                <br>
+            </div>
+            <div id="code" class="wow animated bounceInRight" data-wow-delay="0.1s">
+            <p>Розв’язати нелінійні рівняння та здійснити чисельне інтегрування функцій наближеними методами, використовуючи мови функціонального програмування та lambda, let та set! форми.</p>
+            </div>
+            <div id="main" class="wow animated bounceInLeft" data-wow-delay="0.1s">
+                <h5>Умова завдання</h5>
+            </div>
+            <div id="main" class="wow animated bounceInRight" data-wow-delay="0.1s">
+                <h6>1 завдання</h6>
+            </div>
+            <div id="code" class="wow animated bounceInRight" data-wow-delay="0.1s">
+            <p>Розв’язати нелінійне рівняння x=cos(x) методами перебору та хорд, визначивши інтервал [a, b], на якому існує рішення рівняння. Значення a, b інтервалу вибрати самостійно. Порівняти результати розв’язків двома методами.  </p>
+            </div>
+            <div id="main" class="wow animated bounceInRight" data-wow-delay="0.1s">
+                <h6>2 завдання</h6>
+            </div>
+            <div id="code" class="wow animated bounceInRight" data-wow-delay="0.1s">
+            <p>За допомогою формули Сімпсона інтеграл функції f(х) від a до b наближено обчислюється у вигляді: </p>
+            <img class="codeImg" src="scr/lab3_task2.png">
+            <p>де h = (b - a) / n, для якогось парного цілого числа n, yk = f (a + kh). (Збільшення n підвищує точність наближеного обчислення.) Визначити процедуру, яка приймає в якості аргументів  f, a, b, n, та повертає значення інтеграла, обчисленого за формулою Сімпсона. </p>
+            <img class="codeImg" src="scr/lab3_task2_2.png">    
+        </div>
+            <div id="main" class="wow animated bounceInLeft" data-wow-delay="0.1s">
+                <h5>Структура програми</h5>
+            </div>
+            <div id="main" class="wow animated bounceInRight" data-wow-delay="0.1s">
+                <h6>1 завдання - блок-схема та опис</h6>
+            </div>
+            <div id="code" class="wow animated bounceInRight" data-wow-delay="0.1s">
+            <p> 
+                
+            </div>
+            <div id="main" class="wow animated bounceInRight" data-wow-delay="0.1s">
+                <h6>2 завдання - блок-схема та опис</h6>
+            </div>
+            <div id="code" class="wow animated bounceInRight" data-wow-delay="0.1s">
+                <p>
+                             </div>
+
+            
+            <div id="main" class="wow animated bounceInLeft" data-wow-delay="0.1s">
+                <h5>Обгрунтування вибору середовища та мови програмування</h5>
+            </div>
+            <div id="main" class="wow animated bounceInLeft" data-wow-delay="0.1s">
+                <h6>Мова функціонального програмування: Haskell</h6>
+            
+            <p>
+
+                - Це одна з самих популярних функціональних мов програмування.<br>
+                - Зручна та обширна документація.<br>
+                - Звичний синтаксис.<br></p>
+</div>
+            <div id="main" class="wow animated bounceInLeft" data-wow-delay="0.1s">
+                <h6>Середовище програмування: Visual Studio Code</h6>
+                <p>
+
+                    - Легкий та зручний редактор коду, який можна використовувати майже для будь-якої мови програмування.<br>
+                    - Має всі необхідні функції для програмування і працює нsабагато швидше в порівнянні з іншими IDE.<br></p>
+                     </div>
+
+                     <div id="main" class="wow animated bounceInLeft" data-wow-delay="0.1s">
+                        <h5>Код програми</h5>
+                        <br>
+                    </div>
+                    <div id="code" class="wow animated bounceInRight" data-wow-delay="0.1s">
+                        <div class="button-item">
+                            <a href="exec/lab1.hs" class="btn-1">Завантажити код</a>
+                        </div>
+                        <h6>Задача 1</h6>
+                        <code>
+                            <pre>
+                                chordMethod :: (Ord t, Fractional t) => t -> (t -> t) -> t -> t -> t
+                                chordMethod eps f a b
+                                    | abs (f x) <= eps = x
+                                    | f a * f x < 0 = chordMethod eps f a x
+                                    | otherwise = chordMethod eps f x b
+                                    where x = a + abs (f a / (f b - f a)) * (b - a)
+                                    
+                                iterationMethod :: (Num a1, Num a2, Ord a1, Ord a2) => a2 -> (a2 -> a2) -> (t -> a1) -> a2 -> t -> t -> a2
+                                iterationMethod eps f df x0 a b
+                                    | df a >= df b || df b >= 1 = -1
+                                    | abs (x1 - x0) >= eps = iterationMethod eps f df x1 a b
+                                    | otherwise = x1
+                                    where x1 = f x0
+                                
+                                firstTask = do
+                                    let f1 = \x -> cos x
+                                    let df1 = \ x -> sin x
+                                
+                                    print (iterationMethod 0.000001 f1 df1 0.5 0 1.5)
+                                
+                                    let f2 = \x -> x - cos x
+                                    print (chordMethod 0.000001 f2 0 1.5)                                
+                        </pre>
+                        </code>
+                        <h6>Задача 2</h6>
+                        <code>
+                            <pre>
+                                data Interval = I (Double,Double) Int
+                                toXs :: Interval -> [Double]
+                                toXs (I (a, b) n) = map (\x -> a + (b-a) / fromIntegral (n-1) * fromIntegral x) [0..n-1] -- make array from interval
+                                
+                                wSimp h n number | (number == 1 || number == n) = (1/3) * h -- compute coefficients
+                                                 | (number > 1 && number < n && even number) = (4/3) * h
+                                                 | (number > 1 && number < n && odd number) = (2/3) * h
+                                                 | otherwise = error "error"
+                                
+                                integralSimp f (I (a,b) n) = 
+                                    let h = (b - a) / fromIntegral (n - 1)
+                                        xs = toXs (I (a, b) n)
+                                        fs = map f xs
+                                        ws = map (wSimp h n) [1..n]
+                                    in sum $ zipWith (*) fs ws
+                                
+                                secondTask = do
+                                    let f = \x -> cos x / sqrt (1 - x ** 2)
+                                    
+                                    print (integralSimp f (I (0, pi/4) 100))
+                                
+            
+                        </pre>
+                        </code>
+                    </div>
+                    <div id="main" class="wow animated bounceInLeft" data-wow-delay="0.1s">
+                        <h5>Результати виконання</h5>
+                        <div id="main" class="wow animated bounceInRight" data-wow-delay="0.1s">
+                            <h6>Задача 1</h6>
+                        </div>
+                        <div id="code" class="wow animated bounceInRight" data-wow-delay="0.1s">
+                            <img class="codeImg" src="scr/lab_3_task_1_res.png">
+                        <div id="main" class="wow animated bounceInRight" data-wow-delay="0.1s">
+                             <h6>Задача 2</h6>
+                        </div>
+                        <div id="code" class="wow animated bounceInRight" data-wow-delay="0.1s">
+                             <img class="codeImg" src="scr/lab_3_task_2_res.png">
+            </div>>
+            <div id="main" class="wow animated bounceInLeft" data-wow-delay="0.1s">
+                <h5>Висновок</h5>
+                <br>
+                <p>У ході виконання цієї лабораторної роботи було опановано основні методи чисельного інтергрування та розв'язання нелінійних рівнянь з використанням функціональної парадигми програмування, зокрема з використанням лямбда-функцій та let/where форм. 
+                    У першій задачі написано програму для розвязання нелінійних рівнянь методами перебору та хорд, порівняно результати їх роботи. 
+                    У другій задачі написано програму для чисельного інтегрування функцій за формулою Сімпсона. </div>
+        </body>
+    
+</html>
