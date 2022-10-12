@@ -1,0 +1,45 @@
+</html>
+<html>
+    
+    <head>
+        <link rel="stylesheet" href="../../wow-animation/animate.css">
+        <script src="../../wow-animation/animate.min.css"></script>
+        <script src="../../wow-animation/wow.min.js"></script>
+        <script src="../../wow-animation/wow.js"></script>
+        <link rel="stylesheet" type="text/css" href="../style.css" />
+        <meta http-equiv="Content-Type" content="text/html" ; charset="utf-8">
+  
+
+        <body>
+
+            <div id="main" class="wow animated bounceInLeft" data-wow-delay="0.1s">
+                <h5>Структура програми</h5>
+            </div>
+            <div id="main" class="wow animated bounceInRight" data-wow-delay="0.1s">
+                <h6>1 завдання - блок-схема та опис</h6>
+             </div>
+            <div id="code" class="wow animated bounceInRight" data-wow-delay="0.1s">
+            <p> Код обчислює нове число, віднімаючи одне від іншого, але лише якщо воно не дорівнює нулю.
+                Якщо воно дорівнює нулю, то функція повертає -1.
+                В іншому випадку він додає 1/2 цього числа до себе та множить результат на 5.
+                Код повторює два списки: вхідний список (числа) і вихідний список (обчислені значення).
+                Він починається з 0 в обох списках і збільшує кожне значення на одиницю, поки вони не перестануть бути меншими або більшими за одне одного.
+                Потім він приймає різницю між цими двома числами як нове значення для ітерації в обох списках.
+                Код намагається показати, чим відрізняються два методи обчислення.
+                Перший метод обчислює довжину хорди за допомогою ітераційної формули методу перебору, тоді як другий метод використовує рекурсивну формулу методу хорд.</p>
+                </p>
+            </div>
+            <div id="main" class="wow animated bounceInRight" data-wow-delay="0.1s">
+                <h6>2 завдання - блок-схема та опис</h6>
+            </div>
+            <div id="code" class="wow animated bounceInRight" data-wow-delay="0.1s">
+                <p> Це функція, яка приймає інтервал і повертає інтеграл його першого елемента.
+                    Код також є функцією, яка приймає інтервал і повертає інтеграл його другого елемента.
+                    Код починається з визначення двох функцій, toXs :: Interval -> [Double] і wSimp :: (Fractional a2, Integral a1) => a2 -> a1 -> a1 -> a2 .
+                    Вони використовуються у визначенні integralsimps, яке визначається таким чином: integralSimp f (I (a,b) n) = let h = (b - a) / fromIntegral (n - 1) xs = toXs (I (a, b) n) fs = map f xs ws = map (wSimp h n) [1..n] у сумі $ zipWith (*) fs ws
+                    Код використовується для обчислення інтеграла функції.
+                    Код використовує функції map і zipWith для повторення інтервалів.</p>
+            </div>
+               </body>
+    
+</html>
