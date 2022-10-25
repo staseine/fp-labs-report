@@ -8,6 +8,7 @@ chordMethod eps f a b
     | f a * f x < 0 = chordMethod eps f a x
     | otherwise = chordMethod eps f x b
     where x = a + abs (f a / (f b - f a)) * (b - a)
+    
 
 iterationMethod :: (Num a1, Num a2, Ord a1, Ord a2) => a2 -> (a2 -> a2) -> (t -> a1) -> a2 -> t -> t -> a2
 iterationMethod eps f df x0 a b
