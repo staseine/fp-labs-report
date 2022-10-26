@@ -1,0 +1,60 @@
+</html>
+<html>
+    
+    <head>
+        <link rel="stylesheet" href="../../wow-animation/animate.css">
+        <script src="../../wow-animation/animate.min.css"></script>
+        <script src="../../wow-animation/wow.min.js"></script>
+        <script src="../../wow-animation/wow.js"></script>
+        <link rel="stylesheet" type="text/css" href="../style.css" />
+        <meta http-equiv="Content-Type" content="text/html" ; charset="utf-8">
+        
+    <body>
+
+        <div id="main" class="wow animated bounceInLeft" data-wow-delay="0.1s">
+            <h5>Код програми</h5>
+            <br>
+        </div>
+        <div id="code" class="wow animated bounceInRight" data-wow-delay="0.1s">
+            <div class="button-item">
+                <a href="exec/lab6.hs" class="btn-1">Завантажити код</a>
+            </div>
+            <h6>Задача 1</h6>
+            <code>
+                <pre>
+                    filterIndex :: Eq b => [b] -> ([b] -> b) -> Int
+                    filterIndex xs predicate = head $ filter ((== predicate xs) . (xs !!)) [0..]
+
+                    firstTask = do
+                        let v = [10, 2, 4, 5, 9]
+
+                        print ("Maximum element is " ++ show (maximum v))
+                        print ("Maximum element index is " ++ show (filterIndex v maximum))
+
+                        print ("Minimum element is " ++ show (minimum v))
+                        print ("Minimum element index is " ++ show (filterIndex v minimum))                                
+            </pre>
+            </code>
+            <h6>Задача 2</h6>
+            <code>
+                <pre>
+                    showReverse :: Integral a => [a] -> a -> [a]
+                    showReverse stack m = filter (\x -> x `mod` m /= 0) (reverse stack)
+                    
+                    secondTask = do
+                      let stack = [10, 9 .. 1]
+                      putStrLn "Stack:"
+                      print stack
+                    
+                      putStrLn "Input the number"
+                      input <- getLine
+                      let m = read input :: Int
+                    
+                      putStrLn "Reverse stack:"
+                      print (showReverse stack m)
+            </pre>
+            </code>
+        </div>
+    </body>
+    
+</html>
