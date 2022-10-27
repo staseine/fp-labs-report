@@ -7,7 +7,7 @@ filterIndex xs predicate = head $ filter ((== predicate xs) . (xs !!)) [0..]
 
 firstTask :: IO ()
 firstTask = do
-  let v = [10, 2, 4, 5, 9]
+  let v = [10, 4, 2, 5, 9]
 
   print ("Maximum element is " ++ show (maximum v))
   print ("Maximum element index is " ++ show (filterIndex v maximum))
