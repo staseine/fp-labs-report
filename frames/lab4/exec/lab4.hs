@@ -1,5 +1,5 @@
-import Data.List
-import System.IO
+import Data.List ( intercalate )
+import System.IO ()
 import Distribution.Compat.CharParsing (integral)
 
 createList :: Int -> [Int]
@@ -18,6 +18,7 @@ getMean list = ceiling (fromIntegral (sum list) / fromIntegral (length list))
 replaceEvenWithMean:: [Int] -> [Int]
 replaceEvenWithMean list = [ if even x then getMean list else x | x <- list]
 
+firstTask :: IO ()
 firstTask = do
     putStrLn "Input length of list"
     input <- getLine
@@ -40,6 +41,7 @@ firstTask = do
 
 showIdle :: Show a => a -> [Char]
 showIdle idle = "The idle is " ++ show idle ++ " hours"
+
 
 showContent :: (Num t, Enum t, Show a) => a -> t -> String
 showContent carType qty = "Train: " ++ intercalate "-" [show carType | x <- [0..qty]]
